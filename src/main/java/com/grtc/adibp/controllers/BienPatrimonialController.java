@@ -13,6 +13,14 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("api/adibp/bienes-patrimoniales")
 @PreAuthorize("hasRole('ADMIN') or hasRole('SUPPORT')")
 public class BienPatrimonialController extends BaseControllerImpl<BienPatrimonialEntity, BienPatrimonialServiceImpl>{
+    @GetMapping("/buscar-codigo-patrimonial")
+    public ResponseEntity<?> ListByCodigoPatrimonial(@RequestParam String codigoPatrimonial){
+        try{
+            return ResponseEntity.status(HttpStatus.OK).body(service.findByCodigoPatrimonial(codigoPatrimonial));
+        }catch (Exception e){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error. Por favor intente mas tarde\"}");
+        }
+    }
     @GetMapping("/buscar-estado-bueno")
     public ResponseEntity<?> GetByEstadoBueno(){
         try{

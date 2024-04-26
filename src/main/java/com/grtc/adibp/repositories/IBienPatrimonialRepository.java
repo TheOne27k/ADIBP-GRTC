@@ -5,12 +5,15 @@ import com.grtc.adibp.entities.BienPatrimonialEntity;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
 public interface IBienPatrimonialRepository extends IBaseRepository<BienPatrimonialEntity, Long>{
+    @Query(value = "SELECT bp FROM BienPatrimonialEntity bp WHERE bp.codigoPatrimonial = :codigoPatrimonial")
+    BienPatrimonialEntity findByCodigoPatrimonial(@Param("codigoPatrimonial") String codigoPatrimonial);
     @Query(value = "SELECT bp FROM BienPatrimonialEntity bp WHERE bp.estado = 0")
     List<BienPatrimonialEntity> findByEstadoBueno();
     @Query(value = "SELECT bp FROM BienPatrimonialEntity bp WHERE bp.estado = 0")

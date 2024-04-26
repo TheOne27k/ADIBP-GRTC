@@ -8,6 +8,7 @@ import java.util.List;
 
 
 public interface IBienPatrimonialService extends IBaseService<BienPatrimonialEntity, Long>{
+    public BienPatrimonialEntity findByCodigoPatrimonial(String codigoPatrimonial) throws Exception;
     public List<BienPatrimonialEntity> findByEstadoBueno() throws Exception;
     public Page<BienPatrimonialEntity> findByEstadoBueno(Pageable pageable) throws Exception;
     public List<BienPatrimonialEntity> findByEstadoRecuperable() throws Exception;

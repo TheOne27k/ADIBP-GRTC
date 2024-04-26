@@ -20,6 +20,17 @@ public class BienPatrimonialServiceImpl extends BaseServiceImpl<BienPatrimonialE
     public BienPatrimonialServiceImpl(IBaseRepository<BienPatrimonialEntity, Long> baseRepository) {
         super(baseRepository);
     }
+
+    @Override
+    public BienPatrimonialEntity findByCodigoPatrimonial(String codigoPatrimonial) {
+        try {
+            BienPatrimonialEntity bienPatrimonialEntiys = bienPatrimonialRepository.findByCodigoPatrimonial(codigoPatrimonial);
+            return bienPatrimonialEntiys;
+        }catch (Exception e){
+            throw new RuntimeException(e.getMessage());
+        }
+    }
+
     @Override
     public List<BienPatrimonialEntity> findByEstadoBueno(){
         try {
