@@ -32,5 +32,20 @@ public interface IDesplazamientoRepository extends IBaseRepository<Desplazamient
     List<DesplazamientoEntity> findByEmpleadoDestino(@Param("filtro") String filtro);
     @Query(value = "SELECT d FROM DesplazamientoEntity d JOIN d.empleadoDestino e WHERE e.name LIKE %:filtro% OR e.lastName LIKE %:filtro%")
     Page<DesplazamientoEntity> findByEmpleadoDestino(@Param("filtro") String filtro, Pageable pageable);
-
+    @Query(value = "SELECT d FROM DesplazamientoEntity d WHERE d.fecha = :filtro")
+    List<DesplazamientoEntity> findByFecha(@Param("filtro") String filtro);
+    @Query(value = "SELECT d FROM DesplazamientoEntity d WHERE d.fecha = :filtro")
+    Page<DesplazamientoEntity> findByFecha(@Param("filtro") String filtro, Pageable pageable);
+    @Query(value = "SELECT d FROM DesplazamientoEntity d WHERE MONTH(d.fecha) = :filtro")
+    List<DesplazamientoEntity> findByMes(@Param("filtro") String filtro);
+    @Query(value = "SELECT d FROM DesplazamientoEntity d WHERE MONTH(d.fecha) = :filtro")
+    Page<DesplazamientoEntity> findByMes(@Param("filtro") String filtro, Pageable pageable);
+    @Query(value = "SELECT d FROM DesplazamientoEntity d WHERE YEAR(d.fecha) = :filtro")
+    List<DesplazamientoEntity> findByAnio(@Param("filtro") String filtro);
+    @Query(value = "SELECT d FROM DesplazamientoEntity d WHERE YEAR(d.fecha) = :filtro")
+    Page<DesplazamientoEntity> findByAnio(@Param("filtro") String filtro, Pageable pageable);
+    @Query(value = "SELECT d FROM DesplazamientoEntity d WHERE CONCAT(YEAR(d.fecha), '-', MONTH(d.fecha)) = :filtro")
+    List<DesplazamientoEntity> findByMesAndAnio(@Param("filtro") String filtro);
+    @Query(value = "SELECT d FROM DesplazamientoEntity d WHERE CONCAT(YEAR(d.fecha), '-', MONTH(d.fecha)) = :filtro")
+    Page<DesplazamientoEntity> findByMesAndAnio(@Param("filtro") String filtro, Pageable pageable);
 }
