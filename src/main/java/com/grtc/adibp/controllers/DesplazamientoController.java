@@ -5,11 +5,13 @@ import com.grtc.adibp.services.DesplazamientoServiceImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping("api/adibp/desplazamientos")
+@PreAuthorize("hasRole('ADMIN') or hasRole('SUPPORT')")
 public class DesplazamientoController  extends BaseControllerImpl<DesplazamientoEntity, DesplazamientoServiceImpl>{
     @GetMapping("/buscar-codigo-patrimonial")
     public ResponseEntity<?> ListByCodigoPatrimonial(@RequestParam String filtro){
