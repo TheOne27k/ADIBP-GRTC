@@ -3,6 +3,7 @@ package com.grtc.adibp.entities;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -22,6 +23,7 @@ public class DesplazamientoEntity extends BaseEntity {
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     @Column(name = "fecha", nullable = false)
+    @CreationTimestamp
     private LocalDate fecha;
 
     @ManyToOne(fetch = FetchType.EAGER)
