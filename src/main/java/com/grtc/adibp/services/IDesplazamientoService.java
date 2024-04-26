@@ -17,4 +17,12 @@ public interface IDesplazamientoService extends IBaseService<DesplazamientoEntit
     Page<DesplazamientoEntity> findByEmpleadoOrigen(String filtro, Pageable pageable) throws Exception;
     List<DesplazamientoEntity> findByEmpleadoDestino(String filtro) throws Exception;
     Page<DesplazamientoEntity> findByEmpleadoDestino(String filtro, Pageable pageable) throws Exception;
+    List<DesplazamientoEntity> findByFecha(String filtro) throws Exception;
+    Page<DesplazamientoEntity> findByFecha(String filtro, Pageable pageable) throws Exception;
+    List<DesplazamientoEntity> findByMes(String filtro) throws Exception;
+    Page<DesplazamientoEntity> findByMes(String filtro, Pageable pageable) throws Exception;
+    List<DesplazamientoEntity> findByAnio(String filtro) throws Exception;
+    Page<DesplazamientoEntity> findByAnio(String filtro, Pageable pageable) throws Exception;
+    List<DesplazamientoEntity> findByMesAndAnio(String filtro) throws Exception;
+    Page<DesplazamientoEntity> findByMesAndAnio(String filtro, Pageable pageable) throws Exception;
 }
