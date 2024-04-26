@@ -109,22 +109,6 @@ public class DesplazamientoController  extends BaseControllerImpl<Desplazamiento
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error. Por favor intente mas tarde\"}");
         }
     }
-    @GetMapping("/buscar-mes")
-    public ResponseEntity<?> ListByMes(@RequestParam String filtro){
-        try{
-            return ResponseEntity.status(HttpStatus.OK).body(service.findByMes(filtro));
-        }catch (Exception e){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error. Por favor intente mas tarde\"}");
-        }
-    }
-    @GetMapping("/buscar-mes-paginado")
-    public ResponseEntity<?> ListByMes(@RequestParam String filtro, Pageable pageable){
-        try{
-            return ResponseEntity.status(HttpStatus.OK).body(service.findByMes(filtro, pageable));
-        }catch (Exception e){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error. Por favor intente mas tarde\"}");
-        }
-    }
     @GetMapping("/buscar-anio")
     public ResponseEntity<?> ListByAnio(@RequestParam String filtro){
         try{
