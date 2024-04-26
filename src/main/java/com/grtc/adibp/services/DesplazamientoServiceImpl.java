@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+@Transactional
 public class DesplazamientoServiceImpl extends BaseServiceImpl<DesplazamientoEntity, Long> implements IDesplazamientoService {
 
     @Autowired
@@ -21,7 +22,6 @@ public class DesplazamientoServiceImpl extends BaseServiceImpl<DesplazamientoEnt
     }
 
     @Override
-    @Transactional
     public List<DesplazamientoEntity> findByCodigoPatrimonial(String filtro) throws Exception {
         try {
             List<DesplazamientoEntity> desplazamientos = desplazamientoRepository.findByCodigoPatrimonial(filtro);
@@ -42,7 +42,6 @@ public class DesplazamientoServiceImpl extends BaseServiceImpl<DesplazamientoEnt
     }
 
     @Override
-    @Transactional
     public List<DesplazamientoEntity> findByAreaOrigen(String filtro) throws Exception {
         try {
             List<DesplazamientoEntity> desplazamientos = desplazamientoRepository.findByAreaOrigen(filtro);
@@ -63,7 +62,6 @@ public class DesplazamientoServiceImpl extends BaseServiceImpl<DesplazamientoEnt
     }
 
     @Override
-    @Transactional
     public List<DesplazamientoEntity> findByAreaDestino(String filtro) throws Exception {
         try {
             List<DesplazamientoEntity> desplazamientos = desplazamientoRepository.findByAreaDestino(filtro);
@@ -84,7 +82,6 @@ public class DesplazamientoServiceImpl extends BaseServiceImpl<DesplazamientoEnt
     }
 
     @Override
-    @Transactional
     public List<DesplazamientoEntity> findByEmpleadoOrigen(String filtro) throws Exception {
         try {
             List<DesplazamientoEntity> desplazamientos = desplazamientoRepository.findByEmpleadoOrigen(filtro);
@@ -105,7 +102,6 @@ public class DesplazamientoServiceImpl extends BaseServiceImpl<DesplazamientoEnt
     }
 
     @Override
-    @Transactional
     public List<DesplazamientoEntity> findByEmpleadoDestino(String filtro) throws Exception {
         try {
             List<DesplazamientoEntity> desplazamientos = desplazamientoRepository.findByEmpleadoDestino(filtro);

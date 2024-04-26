@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+@Transactional
 public class BienPatrimonialServiceImpl extends BaseServiceImpl<BienPatrimonialEntity, Long>  implements IBienPatrimonialService {
     @Autowired
     private IBienPatrimonialRepository bienPatrimonialRepository;
@@ -20,7 +21,6 @@ public class BienPatrimonialServiceImpl extends BaseServiceImpl<BienPatrimonialE
         super(baseRepository);
     }
     @Override
-    @Transactional
     public List<BienPatrimonialEntity> findByEstadoBueno(){
         try {
             List<BienPatrimonialEntity> bienPatrimonialEntiys = bienPatrimonialRepository.findByEstadoBueno();
