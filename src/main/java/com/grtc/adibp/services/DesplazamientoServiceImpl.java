@@ -124,4 +124,84 @@ public class DesplazamientoServiceImpl extends BaseServiceImpl<DesplazamientoEnt
             throw  new Exception(e.getMessage());
         }
     }
+
+    @Override
+    public List<DesplazamientoEntity> findByFecha(String filtro) throws Exception {
+        try {
+            List<DesplazamientoEntity> desplazamientos = desplazamientoRepository.findByFecha(filtro);
+            return desplazamientos;
+        }catch ( Exception e){
+            throw  new Exception(e.getMessage());
+        }
+    }
+
+    @Override
+    public Page<DesplazamientoEntity> findByFecha(String filtro, Pageable pageable) throws Exception {
+        try {
+            Page<DesplazamientoEntity> desplazamientos = desplazamientoRepository.findByFecha(filtro, pageable);
+            return desplazamientos;
+        }catch ( Exception e){
+            throw  new Exception(e.getMessage());
+        }
+    }
+
+    @Override
+    public List<DesplazamientoEntity> findByMes(String filtro) throws Exception {
+        try {
+            List<DesplazamientoEntity> desplazamientos = desplazamientoRepository.findByMes(filtro);
+            return desplazamientos;
+        }catch ( Exception e){
+            throw  new Exception(e.getMessage());
+        }
+    }
+
+    @Override
+    public Page<DesplazamientoEntity> findByMes(String filtro, Pageable pageable) throws Exception {
+        try {
+            Page<DesplazamientoEntity> desplazamientos = desplazamientoRepository.findByMes(filtro, pageable);
+            return desplazamientos;
+        }catch ( Exception e){
+            throw  new Exception(e.getMessage());
+        }
+    }
+
+    @Override
+    public List<DesplazamientoEntity> findByAnio(String filtro) throws Exception {
+        try {
+            List<DesplazamientoEntity> desplazamientos = desplazamientoRepository.findByAnio(filtro);
+            return desplazamientos;
+        }catch ( Exception e){
+            throw  new Exception(e.getMessage());
+        }
+    }
+
+    @Override
+    public Page<DesplazamientoEntity> findByAnio(String filtro, Pageable pageable) throws Exception {
+        try {
+            Page<DesplazamientoEntity> desplazamientos = desplazamientoRepository.findByAnio(filtro, pageable);
+            return desplazamientos;
+        }catch ( Exception e){
+            throw  new Exception(e.getMessage());
+        }
+    }
+
+    @Override
+    public List<DesplazamientoEntity> findByMesAndAnio(String filtro) throws Exception {
+        try {
+            List<DesplazamientoEntity> desplazamientos = desplazamientoRepository.findByMesAndAnio(filtro);
+            return desplazamientos;
+        }catch ( Exception e){
+            throw  new Exception(e.getMessage());
+        }
+    }
+
+    @Override
+    public Page<DesplazamientoEntity> findByMesAndAnio(String filtro, Pageable pageable) throws Exception {
+        try {
+            Page<DesplazamientoEntity> desplazamientos = desplazamientoRepository.findByMesAndAnio(filtro, pageable);
+            return desplazamientos;
+        }catch ( Exception e){
+            throw  new Exception(e.getMessage());
+        }
+    }
 }
