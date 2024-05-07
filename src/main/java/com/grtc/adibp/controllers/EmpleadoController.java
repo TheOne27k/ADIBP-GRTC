@@ -10,6 +10,5 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping("api/adibp/empleados")
-@PreAuthorize("hasRole('ADMIN')")
 public class EmpleadoController extends BaseControllerImpl<EmpleadoEntity, EmpleadoServiceImpl>{
 }

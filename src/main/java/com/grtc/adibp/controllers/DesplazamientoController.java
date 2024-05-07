@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping("api/adibp/desplazamientos")
-@PreAuthorize("hasRole('ADMIN') or hasRole('SUPPORT')")
 public class DesplazamientoController  extends BaseControllerImpl<DesplazamientoEntity, DesplazamientoServiceImpl>{
     @GetMapping("/buscar-codigo-patrimonial")
     public ResponseEntity<?> ListByCodigoPatrimonial(@RequestParam String filtro){

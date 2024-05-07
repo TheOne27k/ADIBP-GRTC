@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping("api/adibp/bienes-patrimoniales")
-@PreAuthorize("hasRole('ADMIN') or hasRole('SUPPORT')")
 public class BienPatrimonialController extends BaseControllerImpl<BienPatrimonialEntity, BienPatrimonialServiceImpl>{
     @GetMapping("/buscar-codigo-patrimonial")
     public ResponseEntity<?> ListByCodigoPatrimonial(@RequestParam String codigoPatrimonial){
