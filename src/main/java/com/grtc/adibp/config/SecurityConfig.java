@@ -1,4 +1,4 @@
-package com.grtc.adibp.config;
+/*package com.grtc.adibp.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -80,4 +80,4 @@ public class SecurityConfig extends GlobalMethodSecurityConfiguration {
                 .build());
         return new InMemoryUserDetailsManager(userDetails);
     }
-}
+}*/
